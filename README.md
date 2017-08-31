@@ -12,7 +12,7 @@ You have to provide proper dependency for spring boot application, its already d
 
 * first create a new sql schema
 ```
-"CREATE SCHEMA vaadingdemo;"
+"CREATE SCHEMA vaadindemo;"
 ```
 * then run create and insert scripts inside resources files in sql terminal.
 * run maven command to create jar file under target in root folder of project
@@ -26,4 +26,4 @@ You have to provide proper dependency for spring boot application, its already d
 * good to go - its ready to departure at "localhost:8080"
 
 ## Authors
-* **Burak Karaoglan ** - *Initial work* - [Burak Karaoglan](https://github.com/karaoglan)
+* **Burak Karaoglan** - *Initial work* - [Burak Karaoglan](https://github.com/karaoglan)
