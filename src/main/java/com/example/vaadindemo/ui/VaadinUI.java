@@ -7,6 +7,7 @@ import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.ui.*;
@@ -19,6 +20,9 @@ import java.util.List;
 @SpringUI
 @Theme("valo")
 public class VaadinUI extends UI {
+
+    final static Logger logger = Logger.getLogger(VaadinUI.class);
+
     @Autowired
     private CustomerService service;
 
@@ -44,7 +48,7 @@ public class VaadinUI extends UI {
     private void updateGrid() {
         List<Customer> customers = service.findAll();
         List<Customer> customersProc = service.findAllWithProcedure();
-
+        logger.info("customersProc returned list with elements \n" + customersProc);
         grid.setContainerDataSource(new BeanItemContainer<>(Customer.class, customers));
         setFormVisible(false);
     }
