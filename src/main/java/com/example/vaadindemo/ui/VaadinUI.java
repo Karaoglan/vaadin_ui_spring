@@ -43,6 +43,8 @@ public class VaadinUI extends UI {
 
     private void updateGrid() {
         List<Customer> customers = service.findAll();
+        List<Customer> customersProc = service.findAllWithProcedure();
+
         grid.setContainerDataSource(new BeanItemContainer<>(Customer.class, customers));
         setFormVisible(false);
     }

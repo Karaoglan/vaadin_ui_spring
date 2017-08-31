@@ -25,4 +25,9 @@ public class CustomerService {
                 "UPDATE customers SET first_name=?, last_name=? WHERE id=?",
                 customer.getFirstName(), customer.getLastName(), customer.getId());
     }
+
+    public List findAllWithProcedure() {
+        return jdbcTemplate.query("CALL find_all_customers()", (rs, rowNum) -> new Customer(rs.getLong("id"),
+                rs.getString("first_name"), rs.getString("last_name")));
+    }
 }
